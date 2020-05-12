@@ -42,7 +42,7 @@ export default () => (
                         rgba(10,10,10,0.7) 100%),
                         url(${edge.node.images.fluid.src})`,
             }}
-            onClick={() => navigate(`/animal/${edge.node.slug}`)}
+            onClick={() => navigate(`/${edge.node.type}/${edge.node.slug}`)}
           >
             <p className="card__category">{edge.node.city}</p>
 

@@ -3,7 +3,6 @@ import { graphql, StaticQuery } from "gatsby"
 
 import "./index.css"
 export default () => (
- 
   <StaticQuery
     query={graphql`
       {
