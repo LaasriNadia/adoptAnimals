@@ -4,6 +4,30 @@ body {
   padding: 0 10%;
   max-width: 1200px;
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: #4eb55f;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px
+}
+
 h1 {
   font-family: baskervill, sans-serif;
   font-size: 48px;

@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    height :100vh;
+    flex-direction : column;
+    align-items: center;
+    justify-content : center;
+    
+}
+
+svg {
+    width: 50%;
+    top: 0;
+    left: 0;
+}
+.notFound {
+    font-size : 18px;
+    font-family: monospace, 'serif';
+    color : #333;
+}

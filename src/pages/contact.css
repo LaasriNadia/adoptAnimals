@@ -1,0 +1,32 @@
+.contact-container {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10vh 0;
+}
+
+.auth {
+    padding: 10px;
+    background: #355834;
+    color: white;
+    height: 250px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width:600px) {
+    .contact {
+        flex-wrap: wrap;
+    }
+}

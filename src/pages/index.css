@@ -10,6 +10,7 @@
     text-decoration: none;
     transition: all 0.3s ease 0s;
 }
+
 .viewmore:hover {
     color: #f06666;
 }

@@ -30,6 +30,7 @@ export default () => (
     `}
     render={data => (
       <div className="feed">
+        {" "}
         {data.allContentfulAnimales.edges.map(edge => (
           <div
             className="card"
@@ -44,11 +45,10 @@ export default () => (
             }}
             onClick={() => navigate(`/${edge.node.type}/${edge.node.slug}`)}
           >
-            <p className="card__category">{edge.node.city}</p>
-
-            <p className="card__title">{edge.node.name}</p>
+            <p className="card__category"> {edge.node.city} </p>
+            <p className="card__title"> {edge.node.name} </p>{" "}
           </div>
-        ))}
+        ))}{" "}
       </div>
     )}
   />
