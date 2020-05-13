@@ -7,8 +7,7 @@ import "./index.css"
 import Nav from "../components/Nav/index"
 const IndexPage = () => (
   <Layout>
-    {/* <Nav /> */}
-    <Header />
+     <Header />
     <Home />
     <Link to="/animals/all" className="viewmore">
       {" "}

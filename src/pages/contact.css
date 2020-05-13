@@ -34,13 +34,13 @@
     line-height: 25px;
 }
 
-ul {
+.contact ul {
     display: flex;
     padding-top: 5%;
     justify-content: inherit;
 }
 
-ul li img {
+.contact ul li img {
     width: 25px;
 }
 
