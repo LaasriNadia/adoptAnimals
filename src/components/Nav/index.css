@@ -1,25 +1,28 @@
 nav {
-    transform: translateY(80px);
-    margin-top: -80px;
+   transform: translateY(80px);
+   margin-top: -80px;
 }
-.nav__items{
+
+.nav__items {
    background-color: transparent;
    border: none;
    height: 40px;
    margin-top: 40px;
    display: flex;
    justify-content: flex-end;
-   align-items:center;
+   align-items: center;
 }
 
 .nav__item--left {
    margin-right: auto;
 }
+
 .nav__item--logo {
    height: 40px;
 }
+
 .nav__item--link {
-   font-family: Muli,sans-serif;
+   font-family: Muli, sans-serif;
    font-size: 18px;
    font-weight: 700;
    color: #fff;
@@ -27,9 +30,11 @@ nav {
    margin-left: 40px;
    text-decoration: none;
 }
-.nav__item--link:hover{
+
+.nav__item--link:hover {
    color: #f06666;
 }
-.active{
-   color: #f06666; 
+
+.active {
+   color: #f06666;
 }

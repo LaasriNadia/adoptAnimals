@@ -1,42 +1,59 @@
 import React from "react"
 import "./contact.css"
+import Layout from "../components/Layout/layout"
+import githubIcon from "../images/github.png"
+import twitterIcon from "../images/twitter.png"
 const Contact = () => {
   return (
-    <div className="contact-container">
-      <div>
-        {" "}
-        <h1>Contact Us</h1>
-        <hr />
-      </div>
-
+    <Layout>
       <div className="contact">
         <div className="auth">
-          <h2 className="name">Test Test</h2>
+          <h2 className="name">Lorem ipsum</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
             expedita? Deleniti quisquam ipsum amet illum necessitatibus, eum
             obcaecati aliquid quam!
           </p>
           <ul>
-            <li>Github icon</li>
-            <li>Twitter icon</li>
+            <li>
+              <a href="/">
+                {" "}
+                <img src={githubIcon} alt="" />{" "}
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                {" "}
+                <img src={twitterIcon} alt="" />{" "}
+              </a>
+            </li>
           </ul>
         </div>
         <hr />
         <div className="auth">
-          <h2 className="name">Test Test</h2>
+          <h2 className="name">Lorem ipsum</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
             expedita? Deleniti quisquam ipsum amet illum necessitatibus, eum
             obcaecati aliquid quam!
           </p>
           <ul>
-            <li>Github icon</li>
-            <li>Twitter icon</li>
+            <li>
+              <a href="/">
+                {" "}
+                <img src={githubIcon} alt="" />{" "}
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                {" "}
+                <img src={twitterIcon} alt="" />{" "}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 export default Contact
