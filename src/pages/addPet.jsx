@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import Layout from "../components/Layout/layout"
-import "./addAnimal.css"
+import "./addpets.css"
 
-const AddAnimal = () => {
+const AddPet = () => {
   const [name, setName] = useState("")
   const [city, setCity] = useState("")
   const [slug, setSlug] = useState("")
@@ -17,7 +17,6 @@ const AddAnimal = () => {
   const handleSubmit = e => {
     e.preventDefault()
     console.log(name, home, gender, type, city, slug, img, desc)
-    // console.log(type)
   }
 
   return (
@@ -83,9 +82,13 @@ const AddAnimal = () => {
             onChange={e => setType(e.target.value)}
             value={type}
           >
+            <option hidden disabled selected value="">
+              -- select a type --{" "}
+            </option>
             <option value="Birds">Birds</option>
             <option value="Cats">Cats</option>
             <option value="Dogs">Dogs</option>
+            <option value="Other">Other</option>
           </select>
 
           <label htmlFor="city">City:</label>
@@ -123,4 +126,4 @@ const AddAnimal = () => {
     </Layout>
   )
 }
-export default AddAnimal
+export default AddPet

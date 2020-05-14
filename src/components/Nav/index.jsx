@@ -23,14 +23,14 @@ const Nav = () => {
           Home
         </Link>
         <Link
-          to="/addAnimal"
+          to="/addPet"
           className={
             window.location.href.indexOf("apply") > 0
               ? "nav__item--link active"
               : "nav__item--link"
           }
         >
-          Add Animal
+          Add Pet
         </Link>
         <Link
           to="/aboutus"
