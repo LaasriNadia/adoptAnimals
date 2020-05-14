@@ -11,16 +11,15 @@ const archive = props => {
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage =
-    currentPage - 1 === 1 ? "/animals/all" : `/blog/all/${currentPage - 1}`
+    currentPage - 1 === 1 ? "/animals/all" : `/animals/all/${currentPage - 1}`
   const nextPage = `/animals/all/${currentPage + 1}`
 
   return (
     <Layout>
-      <SEO title="blog" />
+      <SEO title="adopAnimals" />
 
       <header>
         <div className="archive__section">
-          {/* <div className="archive__hero" style={{backgroundImage:`url(${HeaderImg})`}}></div> */}
           <div className="archive__nav">
             <Link
               to="/animals/all"
@@ -62,7 +61,6 @@ const archive = props => {
             >
               Birds
             </Link>
-        
           </div>
         </div>
       </header>
