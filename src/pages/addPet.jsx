@@ -6,7 +6,6 @@ const contentful = require("contentful-management")
 const AddPet = () => {
   const [name, setName] = useState("")
   const [city, setCity] = useState("")
-  // const [slug, setSlug] = useState("")
   const [homeData] = useState({ yes: "yes", no: "no" })
   const [home, setHome] = useState("")
   const [genderData] = useState({ male: "male", female: "female" })
@@ -18,8 +17,7 @@ const AddPet = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(name, home, gender, type, age, city, img, desc)
-    // console.log(typeof age)
+    console.log(img)
     const client = contentful.createClient({
       accessToken: "CFPAT-J4NK7_v8oXbHZpQJHsVZMfdGA-t8Mz2Kdh1OAqF9E2U",
     })
@@ -62,6 +60,7 @@ const AddPet = () => {
   return (
     <Layout>
       <div className="add-cont">
+        <img src={img} alt="" />
         <h1>Find your pet a new home</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name</label>
@@ -122,7 +121,7 @@ const AddPet = () => {
             onChange={e => setType(e.target.value)}
             value={type}
           >
-            <option hidden disabled selected value="">
+            <option hidden disabled value="">
               -- select a type --{" "}
             </option>
             <option value="Birds">Birds</option>
@@ -147,17 +146,13 @@ const AddPet = () => {
             onChange={e => setCity(e.target.value)}
           />
 
-          {/* <label htmlFor="slug">Slug:</label>
-          <input
-            type="text"
-            id="slug"
-            name="slug"
-            value={slug}
-            onChange={e => setSlug(e.target.value)}
-          /> */}
-
           <label htmlFor="img">Select image:</label>
-          <input type="file" id="img" name="img" accept="image/*" />
+          <input
+            type="file"
+            id="img"
+            name="img"
+            onChange={e => setImg(URL.createObjectURL(e.target.files[0]))}
+          />
           <div className="group">
             <label htmlFor="description" rows="5" cols="50">
               Describe Your Pet:
