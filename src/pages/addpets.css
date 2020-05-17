@@ -22,7 +22,8 @@ form>* {
     margin-top: 15px;
 }
 
-input[type=text] {
+input[type=text],
+    {
     border: none;
     padding: 10px;
     background-color: #fff;
@@ -40,4 +41,15 @@ select {
 .group>* {
     margin-right: 15px;
     margin-top: 15px;
+}
+
+.error {
+    color: red
+}
+
+button:disabled,
+button[disabled] {
+    cursor: not-allowed;
+    background-color: #cccccc;
+    color: #666666;
 }
