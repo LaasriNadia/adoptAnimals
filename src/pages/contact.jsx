@@ -1,6 +1,6 @@
 import React from "react"
 import "./contactStyles.css"
-import Layout from "../components/Layout/layout.jsx"
+import Layout from "../components/Layout/Layout.jsx"
 import githubIcon from "../images/github.png"
 import twitterIcon from "../images/twitter.png"
 const Contact = () => {

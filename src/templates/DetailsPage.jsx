@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/Layout/layout"
+import Layout from "../components/Layout/Layout.jsx"
 import "./DetailsPageStyles.css"
 export const query = graphql`
   query($slug: String!, $type: String!) {
