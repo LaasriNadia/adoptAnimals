@@ -30,7 +30,7 @@ const Details = props => {
         <div>
           <img
             src={props.data.contentfulAnimales.images.fluid.src}
-            alt="image"
+            alt="pet image"
             style={{ width: "100%", height: "550px" }}
           />
         </div>
