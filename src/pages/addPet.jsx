@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { navigate } from "@reach/router"
-import Layout from "../components/Layout/layout"
+import Layout from "../components/Layout/layout.jsx"
 import "./addpets.css"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"

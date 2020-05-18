@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, navigate, StaticQuery } from "gatsby"
-import "./index.css"
+import "./homeStyles.css"
 export default () => (
   <StaticQuery
     query={graphql`

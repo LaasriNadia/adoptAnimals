@@ -3,7 +3,7 @@ import { Link, graphql, navigate } from "gatsby"
 import { window } from "browser-monads"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo"
-import "../components/Home/index.css"
+import "../components/Home/homeStyles.css"
 import "./PagesStyles.css"
 
 const archive = props => {

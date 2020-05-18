@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import "./layout.css"
-import Nav from "../Nav/index"
+import "./layoutStyles.css"
+import Nav from "../Nav/indexNav.jsx"
 const Layout = ({ children }) => {
   return (
     <>

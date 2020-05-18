@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout/layout"
-import "./DetailsPage.css"
+import "./DetailsPageStyles.css"
 export const query = graphql`
   query($slug: String!, $type: String!) {
     contentfulAnimales(slug: { eq: $slug }, type: { eq: $type }) {
@@ -35,7 +35,7 @@ const Details = props => {
           />
         </div>
         <div className="details-content">
-          <label >Name:</label>
+          <label>Name:</label>
           <h4> {props.data.contentfulAnimales.name} </h4>
           <br />
           <label>Age:</label>

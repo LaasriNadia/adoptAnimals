@@ -1,8 +1,7 @@
 import React from "react"
-import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
 import { navigate } from "gatsby"
-import "./404.css"
+import "./404Styles.css"
 const NotFoundPage = () => (
   <>
     <SEO title="404: Not found" />

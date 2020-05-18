@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { window } from "browser-monads"
 import logo from "../../images/compass-logo.svg"
-import "./index.css"
+import "./navStyles.css"
 
 const Nav = () => {
   return (

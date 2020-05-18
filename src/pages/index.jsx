@@ -1,13 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-import Header from "../components/Header/index"
-import Layout from "../components/Layout/layout"
-import Home from "../components/Home/index"
-import "./index.css"
-import Nav from "../components/Nav/index"
+import Header from "../components/Header/Header.jsx"
+import Layout from "../components/Layout/layout.jsx"
+import Home from "../components/Home/indexHome.jsx"
+import "./indexx.css"
 const IndexPage = () => (
   <Layout>
-     <Header />
+    <Header />
     <Home />
     <Link to="/animals/all" className="viewmore">
       {" "}
