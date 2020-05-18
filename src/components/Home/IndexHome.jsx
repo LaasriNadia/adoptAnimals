@@ -4,7 +4,7 @@ import "./homeStyles.css"
 export default () => (
   <StaticQuery
     query={graphql`
-      query HomeQuery {
+      query IndexHomeQuery {
         allContentfulAnimales(
           limit: 9
           sort: { fields: [createdAt], order: DESC }
