@@ -46,10 +46,10 @@ module.exports.createPages = async ({
       })
     })
   })
+
 }
 
-
-// create page for all animals
+//create page for all animals
 //   const getAnimals = makeRequest(
 //     graphql,
 //     `
@@ -72,7 +72,9 @@ module.exports.createPages = async ({
 //     const blogsPerPage = 9
 //     const numPages = Math.ceil(blogs.length / blogsPerPage)
 
-//     Array.from({ length: numPages }).forEach((_, i) => {
+//     Array.from({
+//       length: numPages
+//     }).forEach((_, i) => {
 //       createPage({
 //         path: i === 0 ? `/animals/all` : `/animals/all/${i + 1}`,
 //         component: path.resolve("./src/templates/AnimalsPage.jsx"),
@@ -108,7 +110,9 @@ module.exports.createPages = async ({
 //     const blogsPerPage = 9
 //     const numPages = Math.ceil(blogs.length / blogsPerPage)
 
-//     Array.from({ length: numPages }).forEach((_, i) => {
+//     Array.from({
+//       length: numPages
+//     }).forEach((_, i) => {
 //       createPage({
 //         path: i === 0 ? `/category/dogs` : `/category/dogs/${i + 1}`,
 //         component: path.resolve("./src/templates/DogsPage.jsx"),
@@ -145,7 +149,9 @@ module.exports.createPages = async ({
 //     const blogsPerPage = 9
 //     const numPages = Math.ceil(blogs.length / blogsPerPage)
 
-//     Array.from({ length: numPages }).forEach((_, i) => {
+//     Array.from({
+//       length: numPages
+//     }).forEach((_, i) => {
 //       createPage({
 //         path: i === 0 ? `/category/cats` : `/category/cats/${i + 1}`,
 //         component: path.resolve("./src/templates/CatsPage.jsx"),
@@ -182,7 +188,9 @@ module.exports.createPages = async ({
 //     const blogsPerPage = 9
 //     const numPages = Math.ceil(blogs.length / blogsPerPage)
 
-//     Array.from({ length: numPages }).forEach((_, i) => {
+//     Array.from({
+//       length: numPages
+//     }).forEach((_, i) => {
 //       createPage({
 //         path: i === 0 ? `/category/birds` : `/category/birds/${i + 1}`,
 //         component: path.resolve("./src/templates/BirdsPage.jsx"),
