@@ -47,161 +47,161 @@ module.exports.createPages = async ({
     })
   })
 
+
+
+  //create page for all animals
+  const getAnimals = makeRequest(
+    graphql,
+    `
+    {
+      allContentfulAnimales (sort: {fields: createdAt, order: DESC}
+            filter:{ node_locale:{eq:"en-US"}},) 
+            {
+        edges {
+            node {
+            slug
+            id
+            }
+        }
+        }
+    }
+
+    `
+  ).then(result => {
+    const blogs = result.data.allContentfulAnimales.edges
+    const blogsPerPage = 9
+    const numPages = Math.ceil(blogs.length / blogsPerPage)
+
+    Array.from({
+      length: numPages
+    }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/animals/all` : `/animals/all/${i + 1}`,
+        component: path.resolve("./src/templates/AnimalsPage.jsx"),
+        context: {
+          limit: blogsPerPage,
+          skip: i * blogsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
+    })
+  })
+  // create category Dogs page 
+  const getDogs = makeRequest(
+    graphql,
+    `
+{
+  allContentfulAnimales (sort: {fields: createdAt, order: DESC}
+        filter:{ node_locale:{eq:"en-US"},type:{eq : "Dogs"}},) 
+        {
+    edges {
+        node {
+        slug
+        id
+        }
+    }
+    }
 }
 
-//create page for all animals
-//   const getAnimals = makeRequest(
-//     graphql,
-//     `
-//     {
-//       allContentfulAnimales (sort: {fields: createdAt, order: DESC}
-//             filter:{ node_locale:{eq:"en-US"}},) 
-//             {
-//         edges {
-//             node {
-//             slug
-//             id
-//             }
-//         }
-//         }
-//     }
+`
+  ).then(result => {
+    const blogs = result.data.allContentfulAnimales.edges
+    const blogsPerPage = 9
+    const numPages = Math.ceil(blogs.length / blogsPerPage)
 
-//     `
-//   ).then(result => {
-//     const blogs = result.data.allContentfulAnimales.edges
-//     const blogsPerPage = 9
-//     const numPages = Math.ceil(blogs.length / blogsPerPage)
+    Array.from({
+      length: numPages
+    }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/category/dogs` : `/category/dogs/${i + 1}`,
+        component: path.resolve("./src/templates/DogsPage.jsx"),
+        context: {
+          limit: blogsPerPage,
+          skip: i * blogsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
+    })
+  })
 
-//     Array.from({
-//       length: numPages
-//     }).forEach((_, i) => {
-//       createPage({
-//         path: i === 0 ? `/animals/all` : `/animals/all/${i + 1}`,
-//         component: path.resolve("./src/templates/AnimalsPage.jsx"),
-//         context: {
-//           limit: blogsPerPage,
-//           skip: i * blogsPerPage,
-//           numPages,
-//           currentPage: i + 1,
-//         },
-//       })
-//     })
-//   })
-//   // create category Dogs page 
-//   const getDogs = makeRequest(
-//     graphql,
-//     `
-// {
-//   allContentfulAnimales (sort: {fields: createdAt, order: DESC}
-//         filter:{ node_locale:{eq:"en-US"},type:{eq : "Dogs"}},) 
-//         {
-//     edges {
-//         node {
-//         slug
-//         id
-//         }
-//     }
-//     }
-// }
+  // create category Dogs page 
+  const getCats = makeRequest(
+    graphql,
+    `
+{
+  allContentfulAnimales (sort: {fields: createdAt, order: DESC}
+        filter:{ node_locale:{eq:"en-US"},type:{eq : "Cats"}},) 
+        {
+    edges {
+        node {
+        slug
+        id
+        }
+    }
+    }
+}
 
-// `
-//   ).then(result => {
-//     const blogs = result.data.allContentfulAnimales.edges
-//     const blogsPerPage = 9
-//     const numPages = Math.ceil(blogs.length / blogsPerPage)
+`
+  ).then(result => {
+    const blogs = result.data.allContentfulAnimales.edges
+    const blogsPerPage = 9
+    const numPages = Math.ceil(blogs.length / blogsPerPage)
 
-//     Array.from({
-//       length: numPages
-//     }).forEach((_, i) => {
-//       createPage({
-//         path: i === 0 ? `/category/dogs` : `/category/dogs/${i + 1}`,
-//         component: path.resolve("./src/templates/DogsPage.jsx"),
-//         context: {
-//           limit: blogsPerPage,
-//           skip: i * blogsPerPage,
-//           numPages,
-//           currentPage: i + 1,
-//         },
-//       })
-//     })
-//   })
+    Array.from({
+      length: numPages
+    }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/category/cats` : `/category/cats/${i + 1}`,
+        component: path.resolve("./src/templates/CatsPage.jsx"),
+        context: {
+          limit: blogsPerPage,
+          skip: i * blogsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
+    })
+  })
 
-//   // create category Dogs page 
-//   const getCats = makeRequest(
-//     graphql,
-//     `
-// {
-//   allContentfulAnimales (sort: {fields: createdAt, order: DESC}
-//         filter:{ node_locale:{eq:"en-US"},type:{eq : "Cats"}},) 
-//         {
-//     edges {
-//         node {
-//         slug
-//         id
-//         }
-//     }
-//     }
-// }
+  // create category Brids page 
+  const getBirds = makeRequest(
+    graphql,
+    `
+{
+  allContentfulAnimales (sort: {fields: createdAt, order: DESC}
+        filter:{ node_locale:{eq:"en-US"},type:{eq : "Birds"}},) 
+        {
+    edges {
+        node {
+        slug
+        id
+        }
+    }
+    }
+}
 
-// `
-//   ).then(result => {
-//     const blogs = result.data.allContentfulAnimales.edges
-//     const blogsPerPage = 9
-//     const numPages = Math.ceil(blogs.length / blogsPerPage)
+`
+  ).then(result => {
+    const blogs = result.data.allContentfulAnimales.edges
+    const blogsPerPage = 9
+    const numPages = Math.ceil(blogs.length / blogsPerPage)
 
-//     Array.from({
-//       length: numPages
-//     }).forEach((_, i) => {
-//       createPage({
-//         path: i === 0 ? `/category/cats` : `/category/cats/${i + 1}`,
-//         component: path.resolve("./src/templates/CatsPage.jsx"),
-//         context: {
-//           limit: blogsPerPage,
-//           skip: i * blogsPerPage,
-//           numPages,
-//           currentPage: i + 1,
-//         },
-//       })
-//     })
-//   })
+    Array.from({
+      length: numPages
+    }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/category/birds` : `/category/birds/${i + 1}`,
+        component: path.resolve("./src/templates/BirdsPage.jsx"),
+        context: {
+          limit: blogsPerPage,
+          skip: i * blogsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
+    })
+  })
 
-//   // create category Brids page 
-//   const getBirds = makeRequest(
-//     graphql,
-//     `
-// {
-//   allContentfulAnimales (sort: {fields: createdAt, order: DESC}
-//         filter:{ node_locale:{eq:"en-US"},type:{eq : "Birds"}},) 
-//         {
-//     edges {
-//         node {
-//         slug
-//         id
-//         }
-//     }
-//     }
-// }
-
-// `
-//   ).then(result => {
-//     const blogs = result.data.allContentfulAnimales.edges
-//     const blogsPerPage = 9
-//     const numPages = Math.ceil(blogs.length / blogsPerPage)
-
-//     Array.from({
-//       length: numPages
-//     }).forEach((_, i) => {
-//       createPage({
-//         path: i === 0 ? `/category/birds` : `/category/birds/${i + 1}`,
-//         component: path.resolve("./src/templates/BirdsPage.jsx"),
-//         context: {
-//           limit: blogsPerPage,
-//           skip: i * blogsPerPage,
-//           numPages,
-//           currentPage: i + 1,
-//         },
-//       })
-//     })
-//   })
-
-// }
+}
