@@ -25,7 +25,7 @@ const Nav = () => {
         <Link
           to="/AddPet"
           className={
-            window.location.href.indexOf("apply") > 0
+            window.location.href.indexOf("AddPet") > 0
               ? "nav__item--link active"
               : "nav__item--link"
           }
@@ -45,7 +45,7 @@ const Nav = () => {
         <Link
           to="/Contact"
           className={
-            window.location.href.indexOf("contact") > 0
+            window.location.href.indexOf("Contact") > 0
               ? "nav__item--link active"
               : "nav__item--link"
           }
