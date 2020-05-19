@@ -25,7 +25,7 @@ const AddPet = () => {
   const uploadImage = e => {
     setImg(URL.createObjectURL(e.target.files[0]))
     console.log("img is uploaded")
-    client.getSpace(process.env.CONTENTFUL_SPACE_ID).then(function (space) {
+    client.getSpace("lillgvozq1hp").then(function (space) {
       let fileData = {
         fields: {
           title: {
@@ -73,7 +73,7 @@ const AddPet = () => {
     const isFormValid = isValid()
     if (isFormValid == true) {
       client
-        .getSpace(process.env.CONTENTFUL_SPACE_ID)
+        .getSpace("lillgvozq1hp")
         .then(space =>
           space
             .createEntry("animales", {
