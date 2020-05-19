@@ -25,7 +25,7 @@ const AddPet = () => {
   const uploadImage = e => {
     setImg(URL.createObjectURL(e.target.files[0]))
     console.log("img is uploaded")
-    client.getSpace("lillgvozq1hp").then(function (space) {
+    client.getSpace(GATSBY_CONTENTFUL_SPACE_ID).then(function (space) {
       let fileData = {
         fields: {
           title: {
@@ -73,7 +73,7 @@ const AddPet = () => {
     const isFormValid = isValid()
     if (isFormValid == true) {
       client
-        .getSpace("lillgvozq1hp")
+        .getSpace(GATSBY_CONTENTFUL_SPACE_ID)
         .then(space =>
           space
             .createEntry("animales", {
