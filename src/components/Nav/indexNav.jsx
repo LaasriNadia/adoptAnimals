@@ -23,7 +23,7 @@ const Nav = () => {
           Home
         </Link>
         <Link
-          to="/AddPet"
+          to="/addpet/"
           className={
             window.location.href.indexOf("AddPet") > 0
               ? "nav__item--link active"
@@ -33,7 +33,7 @@ const Nav = () => {
           Add Pet
         </Link>
         <Link
-          to="/aboutus"
+          to="/aboutus/"
           className={
             window.location.href.indexOf("aboutus") > 0
               ? "nav__item--link active"
@@ -43,7 +43,7 @@ const Nav = () => {
           About Us
         </Link>
         <Link
-          to="/Contact"
+          to="/contact/"
           className={
             window.location.href.indexOf("Contact") > 0
               ? "nav__item--link active"

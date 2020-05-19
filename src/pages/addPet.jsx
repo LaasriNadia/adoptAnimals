@@ -9,8 +9,6 @@ const contentful = require("contentful-management")
 const AddPet = () => {
   const [name, setName] = useState("")
   const [city, setCity] = useState("")
-  const [homeData] = useState({ yes: "yes", no: "no" })
-  const [home, setHome] = useState("")
   const [genderData] = useState({ male: "male", female: "female" })
   const [gender, setGender] = useState("")
   const [type, setType] = useState("")
@@ -20,11 +18,42 @@ const AddPet = () => {
   const [errorText, setErrorText] = useState("")
 
   const [imgId, setImgId] = useState("")
+  const client = contentful.createClient({
+    accessToken: "CFPAT-J4NK7_v8oXbHZpQJHsVZMfdGA-t8Mz2Kdh1OAqF9E2U",
+  })
+
+  const uploadImage = e => {
+    setImg(URL.createObjectURL(e.target.files[0]))
+    console.log("img is uploaded")
+    client.getSpace(process.env.CONTENTFUL_SPACE_ID).then(function (space) {
+      let fileData = {
+        fields: {
+          title: {
+            "en-US": "testupload",
+          },
+          file: {
+            "en-US": {
+              contentType: "image/jpeg",
+              fileName: "berlin_english.jpg",
+              upload: "https://via.placeholder.com/150.jpg",
+            },
+          },
+        },
+      }
+
+      space.createAsset(fileData).then(function (asset) {
+        asset.processForAllLocales().then(function (processedAsset) {
+          processedAsset.publish().then(function (publishedAsset) {
+            setImgId(publishedAsset.sys.id)
+          })
+        })
+      })
+    })
+  }
 
   const isValid = () => {
     if (
       name === "" ||
-      home === "" ||
       gender === "" ||
       type === "" ||
       age === 0 ||
@@ -38,39 +67,11 @@ const AddPet = () => {
       return true
     }
   }
-  const client = contentful.createClient({
-    accessToken: "CFPAT-J4NK7_v8oXbHZpQJHsVZMfdGA-t8Mz2Kdh1OAqF9E2U",
-  })
+
   const handleSubmit = e => {
     e.preventDefault()
     const isFormValid = isValid()
     if (isFormValid == true) {
-      client.getSpace(process.env.CONTENTFUL_SPACE_ID).then(function (space) {
-        let fileData = {
-          fields: {
-            title: {
-              "en-US": "Berlin",
-            },
-            file: {
-              "en-US": {
-                contentType: "image/jpeg",
-                fileName: "berlin_english.jpg",
-                upload: "https://via.placeholder.com/150.jpg",
-              },
-            },
-          },
-        }
-
-        space.createAsset(fileData).then(function (asset) {
-          asset.processForAllLocales().then(function (processedAsset) {
-            processedAsset.publish().then(function (publishedAsset) {
-              setImgId(publishedAsset.sys.id)
-            })
-          })
-        })
-      })
-
-      //
       client
         .getSpace(process.env.CONTENTFUL_SPACE_ID)
         .then(space =>
@@ -84,7 +85,7 @@ const AddPet = () => {
                   "en-US": name,
                 },
                 home: {
-                  "en-US": home === "yes" ? true : false,
+                  "en-US": true,
                 },
                 sex: {
                   "en-US": gender === "male" ? true : false,
@@ -117,7 +118,7 @@ const AddPet = () => {
         .then(() => {
           toast.success("Your Pet's informations are added !")
           setTimeout(() => {
-            navigate("animals/all")
+            navigate("/animals/all")
           }, 3000)
         })
         .catch(console.error)
@@ -129,7 +130,6 @@ const AddPet = () => {
       <ToastContainer />
 
       <div className="add-cont">
-        <img src={img} alt="" />
         <h1>Find your pet a new home</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name</label>
@@ -140,28 +140,6 @@ const AddPet = () => {
             value={name}
             onChange={e => setName(e.target.value)}
           />
-
-          <div className="group">
-            <span>Home:</span>
-            <input
-              type="radio"
-              id="yes"
-              name="home"
-              value={homeData.yes}
-              checked={homeData.yes === home}
-              onChange={e => setHome(e.target.value)}
-            />
-            <label htmlFor="yes">Yes</label>
-            <input
-              type="radio"
-              id="no"
-              name="home"
-              value={homeData.no}
-              checked={homeData.no === home}
-              onChange={e => setHome(e.target.value)}
-            />
-            <label htmlFor="no">No</label>
-          </div>
 
           <div className="group">
             <input
@@ -220,7 +198,7 @@ const AddPet = () => {
             type="file"
             id="img"
             name="img"
-            onChange={e => setImg(URL.createObjectURL(e.target.files[0]))}
+            onChange={e => uploadImage(e)}
           />
 
           <div className="group">
