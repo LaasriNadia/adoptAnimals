@@ -129,7 +129,7 @@ const AddPet = () => {
       <ToastContainer />
 
       <div className="add-cont">
-        <img src={img} alt="" />
+      
         <h1>Find your pet a new home</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name</label>
@@ -241,3 +241,4 @@ const AddPet = () => {
   )
 }
 export default AddPet
+
