@@ -9,6 +9,12 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    // {
+    //   resolve: `gatsby-plugin-env-variables`,
+    //   options: {
+    //     whitelist: ["MY_VAR", "MY_OTHER_VAR"]
+    //   },
+    // },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,

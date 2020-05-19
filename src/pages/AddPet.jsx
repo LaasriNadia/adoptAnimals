@@ -25,30 +25,32 @@ const AddPet = () => {
   const uploadImage = e => {
     setImg(URL.createObjectURL(e.target.files[0]))
     console.log("img is uploaded")
-    client.getSpace(GATSBY_CONTENTFUL_SPACE_ID).then(function (space) {
-      let fileData = {
-        fields: {
-          title: {
-            "en-US": "testupload",
-          },
-          file: {
-            "en-US": {
-              contentType: "image/jpeg",
-              fileName: "berlin_english.jpg",
-              upload: "https://via.placeholder.com/150.jpg",
+    client
+      .getSpace(process.env.GATSBY_CONTENTFUL_SPACE_ID)
+      .then(function (space) {
+        let fileData = {
+          fields: {
+            title: {
+              "en-US": "testupload",
+            },
+            file: {
+              "en-US": {
+                contentType: "image/jpeg",
+                fileName: "berlin_english.jpg",
+                upload: "https://via.placeholder.com/150.jpg",
+              },
             },
           },
-        },
-      }
+        }
 
-      space.createAsset(fileData).then(function (asset) {
-        asset.processForAllLocales().then(function (processedAsset) {
-          processedAsset.publish().then(function (publishedAsset) {
-            setImgId(publishedAsset.sys.id)
+        space.createAsset(fileData).then(function (asset) {
+          asset.processForAllLocales().then(function (processedAsset) {
+            processedAsset.publish().then(function (publishedAsset) {
+              setImgId(publishedAsset.sys.id)
+            })
           })
         })
       })
-    })
   }
 
   const isValid = () => {
@@ -73,7 +75,7 @@ const AddPet = () => {
     const isFormValid = isValid()
     if (isFormValid == true) {
       client
-        .getSpace(GATSBY_CONTENTFUL_SPACE_ID)
+        .getSpace(process.env.GATSBY_CONTENTFUL_SPACE_ID)
         .then(space =>
           space
             .createEntry("animales", {
