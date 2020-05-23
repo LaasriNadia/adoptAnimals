@@ -26,79 +26,59 @@ const AddPet = () => {
     setImg(URL.createObjectURL(e.target.files[0]))
     console.log("img is uploaded")
     //using addaset with direct link
-    // client
-    //   .getSpace(process.env.GATSBY_CONTENTFUL_SPACE_ID)
-    //   .then(function (space) {
-    //     let fileData = {
-    //       fields: {
-    //         title: {
-    //           "en-US": "testupload",
-    //         },
-    //         file: {
-    //           "en-US": {
-    //             contentType: "image/jpeg",
-    //             fileName: "berlin_english.jpg",
-    //             upload: `<img src="${img}" />`,
-    //           },
-    //         },
-    //       },
-    //     }
-
-    //     space.createAsset(fileData).then(function (asset) {
-    //       asset.processForAllLocales().then(function (processedAsset) {
-    //         processedAsset.publish().then(function (publishedAsset) {
-    //           setImgId(publishedAsset.sys.id)
-    //         })
-    //       })
-    //     })
-    //   })
-    // using upload a file with img src
     client
       .getSpace(process.env.GATSBY_CONTENTFUL_SPACE_ID)
-      .then(space =>
-        space.createAssetFromFiles({
+      .then(function (space) {
+        let fileData = {
           fields: {
             title: {
-              "en-US": "Asset title",
-            },
-            description: {
-              "en-US": "Asset description",
+              "en-US": "testupload",
             },
             file: {
               "en-US": {
-                contentType: "image/svg+xml",
-                fileName: "circle.svg",
-                file: '<svg><path fill="red" d="M50 50h150v50H50z"/></svg>',
+                contentType: "image/jpeg",
+                fileName: "berlin_english.jpg",
+                upload: `https://via.placeholder.com/150.jpg`,
               },
             },
           },
+        }
+
+        space.createAsset(fileData).then(function (asset) {
+          asset.processForAllLocales().then(function (processedAsset) {
+            processedAsset.publish().then(function (publishedAsset) {
+              setImgId(publishedAsset.sys.id)
+            })
+          })
         })
-      )
-      .then(asset => asset.processForAllLocales())
-      .then(asset => {
-        asset.publish()
       })
-      .catch(console.error)
-
-    // get binary image data
-    // function getBase64Image(img) {
-    //   // Create an empty canvas element
-
-    //   canvas.width = img.width
-    //   canvas.height = img.height
-
-    //   // Copy the image contents to the canvas
-    //   var ctx = canvas.getContext("2d")
-    //   ctx.drawImage(img, 0, 0)
-
-    //   // Get the data-URL formatted image
-    //   // Firefox supports PNG and JPEG. You could check img.src to guess the
-    //   // original format, but be aware the using "image/jpg" will re-encode the image.
-    //   var dataURL = canvas.toDataURL("image/png")
-
-    //   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "")
-    // }
-    // getBase64Image()
+    // using upload a file with img src
+    // client
+    //   .getSpace(process.env.GATSBY_CONTENTFUL_SPACE_ID)
+    //   .then(space =>
+    //     space.createAssetFromFiles({
+    //       fields: {
+    //         title: {
+    //           "en-US": "Asset title",
+    //         },
+    //         description: {
+    //           "en-US": "Asset description",
+    //         },
+    //         file: {
+    //           "en-US": {
+    //             contentType: "image/svg+xml",
+    //             fileName: "circle.svg",
+    //             file: '<svg><path fill="red" d="M50 50h150v50H50z"/></svg>',
+    //           },
+    //         },
+    //       },
+    //     })
+    //   )
+    //   .then(asset => asset.processForAllLocales())
+    //   .then(asset => {
+    //     asset.publish()
+    //   })
+    //   .catch(console.error)
   }
 
   const isValid = () => {
@@ -178,9 +158,6 @@ const AddPet = () => {
   return (
     <Layout>
       <ToastContainer />
-      <svg>
-        <path fill="red" d="M50 50h150v50H50z" />
-      </svg>
       <div className="add-cont">
         <h1>Find your pet a new home</h1>
         <form onSubmit={handleSubmit}>
