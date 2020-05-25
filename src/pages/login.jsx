@@ -23,12 +23,12 @@ const Login = () => {
             backgroundImage: `url(${pictureData.contentfulContentHeader.featuredImage.fluid.src})`,
           }}
         ></div>
-      </div>
 
-      <div className="about">
-        <div className="about_cont">
-          <h2>Login page</h2>
-          Login form
+        <div className="about">
+          <div className="about_cont">
+            <h2>Login page</h2>
+            Login form
+          </div>
         </div>
       </div>
     </Layout>

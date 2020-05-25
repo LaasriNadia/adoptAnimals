@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 const contentful = require("contentful-management")
 const AddPet = () => {
-  const pictureData = useStaticQuery(graphql`
+  const pictureAddPage = useStaticQuery(graphql`
     query {
       contentfulContentHeader {
         description
@@ -145,7 +145,7 @@ const AddPet = () => {
         <div
           className="header__hero"
           style={{
-            backgroundImage: `url(${pictureData.contentfulContentHeader.featuredImage.fluid.src})`,
+            backgroundImage: `url(${pictureAddPage.contentfulContentHeader.featuredImage.fluid.src})`,
           }}
         ></div>
         <ToastContainer />

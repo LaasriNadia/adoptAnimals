@@ -5,7 +5,7 @@ import Layout from "../components/Layout/Layout.jsx"
 import githubIcon from "../images/github.png"
 import twitterIcon from "../images/twitter.png"
 const Contact = () => {
-  const pictureData = useStaticQuery(graphql`
+  const pictureContactPage = useStaticQuery(graphql`
     query {
       contentfulContentHeader {
         description
@@ -23,7 +23,7 @@ const Contact = () => {
         <div
           className="header__hero"
           style={{
-            backgroundImage: `url(${pictureData.contentfulContentHeader.featuredImage.fluid.src})`,
+            backgroundImage: `url(${pictureContactPage.contentfulContentHeader.featuredImage.fluid.src})`,
           }}
         ></div>
         <div className="contact">
