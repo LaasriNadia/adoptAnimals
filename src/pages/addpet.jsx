@@ -5,80 +5,50 @@ import "./addStyles.css"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 const contentful = require("contentful-management")
-
 const AddPet = () => {
   const [name, setName] = useState("")
   const [city, setCity] = useState("")
   const [genderData] = useState({ male: "male", female: "female" })
   const [gender, setGender] = useState("")
   const [type, setType] = useState("")
-  const [img, setImg] = useState("")
   const [desc, setDesc] = useState("")
   const [age, setAge] = useState(0)
   const [errorText, setErrorText] = useState("")
-
   const [imgId, setImgId] = useState("")
   const client = contentful.createClient({
     accessToken: process.env.GATSBY_CONTENTFUL_MANAGEMENT_KEY,
   })
 
   const uploadImage = e => {
-    setImg(URL.createObjectURL(e.target.files[0]))
-    console.log("img is uploaded")
-    //using addaset with direct link
+    e.persist()
+
     client
       .getSpace(process.env.GATSBY_CONTENTFUL_SPACE_ID)
-      .then(function (space) {
-        let fileData = {
+      .then(space =>
+        space.createAssetFromFiles({
           fields: {
             title: {
-              "en-US": "testupload",
+              "en-US": name,
+            },
+            description: {
+              "en-US": desc,
             },
             file: {
               "en-US": {
-                contentType: "image/jpeg",
-                fileName: "berlin_english.jpg",
-                upload: `https://via.placeholder.com/150.jpg`,
+                contentType: e.target.files[0].type,
+                fileName: e.target.files[0].name,
+                file: e.target.files[0],
               },
             },
           },
-        }
-
-        space.createAsset(fileData).then(function (asset) {
-          asset.processForAllLocales().then(function (processedAsset) {
-            processedAsset.publish().then(function (publishedAsset) {
-              setImgId(publishedAsset.sys.id)
-            })
-          })
         })
+      )
+      .then(asset => asset.processForAllLocales())
+      .then(asset => {
+        asset.publish()
+        setImgId(asset.sys.id)
       })
-    // using upload a file with img src
-    // client
-    //   .getSpace(process.env.GATSBY_CONTENTFUL_SPACE_ID)
-    //   .then(space =>
-    //     space.createAssetFromFiles({
-    //       fields: {
-    //         title: {
-    //           "en-US": "Asset title",
-    //         },
-    //         description: {
-    //           "en-US": "Asset description",
-    //         },
-    //         file: {
-    //           "en-US": {
-    //             contentType: "image/svg+xml",
-    //             fileName: "circle.svg",
-    //             file: '<svg><path fill="red" d="M50 50h150v50H50z"/></svg>',
-    //           },
-    //         },
-    //       },
-    //     })
-    //   )
-    //   .then(asset => asset.processForAllLocales())
-    //   .then(asset => {
-    //     asset.publish()
-    //   })
-    //   .catch(console.error)
+      .catch(console.error)
   }
 
   const isValid = () => {

@@ -1,0 +1,22 @@
+.about {
+    transform: translateY(100px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10vh 0;
+}
+
+.about_cont {
+    background: #FFF;
+    color: #3e4443;
+    height: 50vh;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    text-align: start;
+}
