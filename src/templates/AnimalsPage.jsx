@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql, navigate } from "gatsby"
 import { window } from "browser-monads"
-import Layout from "../components/Layout/Layout.jsx"
 import SEO from "../components/seo"
 import "../components/Home/homeStyles.css"
 import "./PagesStyles.css"
@@ -16,7 +15,6 @@ const archive = props => {
 
   return (
     <>
-      {/* <Layout> */}
       <SEO title="adopAnimals" />
 
       <header>
@@ -104,7 +102,6 @@ const archive = props => {
           )}
         </div>
       </div>
-      {/* </Layout> */}
     </>
   )
 }

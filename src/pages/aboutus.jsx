@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import "./aboutStyles.css"
-import Layout from "../components/Layout/Layout.jsx"
 
 export default ({ location }) => (
   <StaticQuery
@@ -19,8 +18,6 @@ export default ({ location }) => (
       }
     `}
     render={data => (
-      // console.log()
-      // <Layout>
       <>
         <div className="header__section">
           <div
@@ -33,7 +30,6 @@ export default ({ location }) => (
           <div className="about">
             <div className="about_cont">
               <h2>About</h2>
-              {/* <span>{location.state.user}</span> */}
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Libero, expedita? Deleniti quisquam ipsum amet illum
@@ -50,7 +46,6 @@ export default ({ location }) => (
             </div>
           </div>
         </div>
-        {/* </Layout> */}
       </>
     )}
   />

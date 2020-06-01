@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/Layout/Layout.jsx"
 import "./DetailsPageStyles.css"
 export const query = graphql`
   query($slug: String!, $type: String!) {
@@ -26,7 +25,6 @@ export const query = graphql`
 const Details = props => {
   return (
     <>
-      {/* <Layout> */}
       <div className="details">
         <div>
           <img
@@ -63,7 +61,6 @@ const Details = props => {
           </div>
         </div>
       </div>
-      {/* </Layout> */}
     </>
   )
 }

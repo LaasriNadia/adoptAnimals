@@ -16,7 +16,6 @@ const archive = props => {
 
   return (
     <>
-      {/* <Layout> */}
       <SEO title="adopAnimals" />
 
       <header>
@@ -104,7 +103,6 @@ const archive = props => {
           )}
         </div>
       </div>
-      {/* </Layout> */}
     </>
   )
 }

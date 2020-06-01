@@ -1,7 +1,6 @@
 import React from "react"
 import "./contactStyles.css"
 import { graphql, useStaticQuery } from "gatsby"
-import Layout from "../components/Layout/Layout.jsx"
 import githubIcon from "../images/github.png"
 import twitterIcon from "../images/twitter.png"
 const Contact = () => {
@@ -19,7 +18,6 @@ const Contact = () => {
   `)
   return (
     <>
-      {/* <Layout> */}
       <div className="header__section">
         <div
           className="header__hero"
@@ -75,7 +73,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      {/* </Layout> */}
     </>
   )
 }

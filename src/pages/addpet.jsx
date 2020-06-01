@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-
+import React, { useState, useContext } from "react"
+import { IdentityContext } from "../components/Context.jsx"
 import { navigate } from "@reach/router"
 import { graphql, useStaticQuery } from "gatsby"
 import "./addStyles.css"
@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css"
 const contentful = require("contentful-management")
 
 const AddPet = () => {
+  const { user, identity: netlifyIdentity } = useContext(IdentityContext)
+
   const pictureAddPage = useStaticQuery(graphql`
     query {
       contentfulContentHeader {
@@ -150,92 +152,106 @@ const AddPet = () => {
           }}
         ></div>
         <ToastContainer />
-
         <div className="add-cont">
-          <h1>Find your pet a new home</h1>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={name}
-              onChange={e => setName(e.target.value)}
-            />
+          {user ? (
+            <>
+              <h1>Find your pet a new home</h1>
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                />
 
-            <div className="group">
-              <input
-                type="radio"
-                id="male"
-                name="gender"
-                value={genderData.male}
-                checked={genderData.male === gender}
-                onChange={e => setGender(e.target.value)}
-              />
-              <label htmlFor="male">Male</label>
-              <input
-                type="radio"
-                id="female"
-                name="gender"
-                value={genderData.female}
-                checked={genderData.female === gender}
-                onChange={e => setGender(e.target.value)}
-              />
-              <label htmlFor="female">Female</label>
-            </div>
+                <div className="group">
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value={genderData.male}
+                    checked={genderData.male === gender}
+                    onChange={e => setGender(e.target.value)}
+                  />
+                  <label htmlFor="male">Male</label>
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value={genderData.female}
+                    checked={genderData.female === gender}
+                    onChange={e => setGender(e.target.value)}
+                  />
+                  <label htmlFor="female">Female</label>
+                </div>
 
-            <label htmlFor="type">Choose the type:</label>
-            <select
-              id="types"
-              onChange={e => setType(e.target.value)}
-              value={type}
-            >
-              <option hidden disabled value="">
-                -- select a type --{" "}
-              </option>
-              <option value="Birds">Birds</option>
-              <option value="Cats">Cats</option>
-              <option value="Dogs">Dogs</option>
-              <option value="Other">Other</option>
-            </select>
+                <label htmlFor="type">Choose the type:</label>
+                <select
+                  id="types"
+                  onChange={e => setType(e.target.value)}
+                  value={type}
+                >
+                  <option hidden disabled value="">
+                    -- select a type --{" "}
+                  </option>
+                  <option value="Birds">Birds</option>
+                  <option value="Cats">Cats</option>
+                  <option value="Dogs">Dogs</option>
+                  <option value="Other">Other</option>
+                </select>
 
-            <label htmlFor="age">Enter The Age:</label>
-            <input
-              type="number"
-              value={age}
-              onChange={e => setAge(e.target.value)}
-            />
+                <label htmlFor="age">Enter The Age:</label>
+                <input
+                  type="number"
+                  value={age}
+                  onChange={e => setAge(e.target.value)}
+                />
 
-            <label htmlFor="city">City:</label>
-            <input
-              type="text"
-              id="city"
-              name="city"
-              value={city}
-              onChange={e => setCity(e.target.value)}
-            />
+                <label htmlFor="city">City:</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  value={city}
+                  onChange={e => setCity(e.target.value)}
+                />
 
-            <label htmlFor="img">Select image:</label>
-            <input
-              type="file"
-              id="img"
-              name="img"
-              onChange={e => uploadImage(e)}
-            />
+                <label htmlFor="img">Select image:</label>
+                <input
+                  type="file"
+                  id="img"
+                  name="img"
+                  onChange={e => uploadImage(e)}
+                />
 
-            <div className="group">
-              <label htmlFor="description" rows="5" cols="50">
-                Describe Your Pet:
-              </label>
-              <textarea
-                value={desc}
-                onChange={e => setDesc(e.target.value)}
-              ></textarea>
-            </div>
+                <div className="group">
+                  <label htmlFor="description" rows="5" cols="50">
+                    Describe Your Pet:
+                  </label>
+                  <textarea
+                    value={desc}
+                    onChange={e => setDesc(e.target.value)}
+                  ></textarea>
+                </div>
 
-            <button type="submit">Add</button>
-            {errorText && <p className="error">{errorText}</p>}
-          </form>
+                <button type="submit">Add</button>
+                {errorText && <p className="error">{errorText}</p>}
+              </form>
+            </>
+          ) : (
+            <>
+              <p>You must login to access this page! </p>
+              <button
+                onClick={() => {
+                  netlifyIdentity.open()
+                }}
+              >
+                Log in
+              </button>
+            </>
+          )}
         </div>
       </div>
     </>

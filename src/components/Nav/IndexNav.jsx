@@ -6,9 +6,7 @@ import logo from "../../images/compass-logo.svg"
 import "./navStyles.css"
 const Nav = () => {
   const { user, identity: netlifyIdentity } = useContext(IdentityContext)
-  const handleClick = () => {
-    console.log(user)
-  }
+
   return (
     <nav>
       <div className="nav__items">
@@ -56,8 +54,6 @@ const Nav = () => {
         >
           Contact
         </Link>
-        <button onClick={() => handleClick()}>test if the user is there</button>
-
         {!user ? (
           <button
             onClick={() => {
