@@ -1,11 +1,12 @@
 import React, { useState } from "react"
+
 import { navigate } from "@reach/router"
 import { graphql, useStaticQuery } from "gatsby"
-import Layout from "../components/Layout/Layout.jsx"
 import "./addStyles.css"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 const contentful = require("contentful-management")
+
 const AddPet = () => {
   const pictureAddPage = useStaticQuery(graphql`
     query {
@@ -140,7 +141,7 @@ const AddPet = () => {
   }
 
   return (
-    <Layout>
+    <>
       <div className="header__section">
         <div
           className="header__hero"
@@ -149,6 +150,7 @@ const AddPet = () => {
           }}
         ></div>
         <ToastContainer />
+
         <div className="add-cont">
           <h1>Find your pet a new home</h1>
           <form onSubmit={handleSubmit}>
@@ -236,7 +238,7 @@ const AddPet = () => {
           </form>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 export default AddPet

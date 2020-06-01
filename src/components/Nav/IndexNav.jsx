@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
+import { IdentityContext } from "../Context.jsx"
 import { Link } from "gatsby"
 import { window } from "browser-monads"
 import logo from "../../images/compass-logo.svg"
 import "./navStyles.css"
-
 const Nav = () => {
+  const { user, identity: netlifyIdentity } = useContext(IdentityContext)
+  const handleClick = () => {
+    console.log(user)
+  }
   return (
     <nav>
       <div className="nav__items">
@@ -52,16 +56,25 @@ const Nav = () => {
         >
           Contact
         </Link>
-        <Link
-          to="/login"
-          className={
-            window.location.href.indexOf("login") > 0
-              ? "nav__item--link active"
-              : "nav__item--link"
-          }
-        >
-          Login
-        </Link>
+        <button onClick={() => handleClick()}>test if the user is there</button>
+
+        {!user ? (
+          <button
+            onClick={() => {
+              netlifyIdentity.open()
+            }}
+          >
+            Log in{" "}
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              netlifyIdentity.logout()
+            }}
+          >
+            Log out{" "}
+          </button>
+        )}
       </div>
     </nav>
   )

@@ -5,14 +5,16 @@ import Layout from "../components/Layout/Layout.jsx"
 import Home from "../components/Home/IndexHome.jsx"
 import "./indexStyle.css"
 const IndexPage = () => (
-  <Layout>
+  // <Layout>
+  <>
     <HeaderComponent />
     <Home />
     <Link to="/animals/all" className="viewmore">
       {" "}
       View More{" "}
     </Link>{" "}
-  </Layout>
+  </>
+  // </Layout>
 )
 
 export default IndexPage

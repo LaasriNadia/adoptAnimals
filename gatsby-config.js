@@ -11,6 +11,18 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout/Layout.jsx`),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: {
+        prefixes: [`/addpet/*`]
+      }
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,

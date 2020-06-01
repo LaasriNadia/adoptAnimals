@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Layout from "../components/Layout/Layout.jsx"
-const Login = () => {
+const Login = props => {
   const pictureData = useStaticQuery(graphql`
     query {
       contentfulContentHeader {
@@ -15,7 +14,7 @@ const Login = () => {
     }
   `)
   return (
-    <Layout>
+    <>
       <div className="header__section">
         <div
           className="header__hero"
@@ -27,11 +26,10 @@ const Login = () => {
         <div className="about">
           <div className="about_cont">
             <h2>Login page</h2>
-            Login form
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 export default Login

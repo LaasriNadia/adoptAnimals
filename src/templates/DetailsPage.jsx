@@ -25,7 +25,8 @@ export const query = graphql`
 
 const Details = props => {
   return (
-    <Layout>
+    <>
+      {/* <Layout> */}
       <div className="details">
         <div>
           <img
@@ -62,7 +63,8 @@ const Details = props => {
           </div>
         </div>
       </div>
-    </Layout>
+      {/* </Layout> */}
+    </>
   )
 }
 

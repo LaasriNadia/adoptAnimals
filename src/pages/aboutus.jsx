@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby"
 import "./aboutStyles.css"
 import Layout from "../components/Layout/Layout.jsx"
 
-export default () => (
+export default ({ location }) => (
   <StaticQuery
     query={graphql`
       {
@@ -19,7 +19,9 @@ export default () => (
       }
     `}
     render={data => (
-      <Layout>
+      // console.log()
+      // <Layout>
+      <>
         <div className="header__section">
           <div
             className="header__hero"
@@ -31,6 +33,7 @@ export default () => (
           <div className="about">
             <div className="about_cont">
               <h2>About</h2>
+              {/* <span>{location.state.user}</span> */}
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Libero, expedita? Deleniti quisquam ipsum amet illum
@@ -47,7 +50,8 @@ export default () => (
             </div>
           </div>
         </div>
-      </Layout>
+        {/* </Layout> */}
+      </>
     )}
   />
 )

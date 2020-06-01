@@ -18,7 +18,8 @@ const Contact = () => {
     }
   `)
   return (
-    <Layout>
+    <>
+      {/* <Layout> */}
       <div className="header__section">
         <div
           className="header__hero"
@@ -74,7 +75,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </Layout>
+      {/* </Layout> */}
+    </>
   )
 }
 export default Contact

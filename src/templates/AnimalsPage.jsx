@@ -15,7 +15,8 @@ const archive = props => {
   const nextPage = `/animals/all/${currentPage + 1}`
 
   return (
-    <Layout>
+    <>
+      {/* <Layout> */}
       <SEO title="adopAnimals" />
 
       <header>
@@ -103,7 +104,8 @@ const archive = props => {
           )}
         </div>
       </div>
-    </Layout>
+      {/* </Layout> */}
+    </>
   )
 }
 
