@@ -38,3 +38,9 @@ nav {
 .active {
    color: #f06666;
 }
+
+.nav__items #btnNav {
+   background: #4eb55f;
+   margin: 1%;
+   width: 110px;
+}

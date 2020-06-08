@@ -155,9 +155,9 @@ const AddPet = () => {
         <div className="add-cont">
           {user ? (
             <>
-              <h1>Find your pet a new home</h1>
+              <h1 id="addPetTitle">Find your pet a new home: </h1>
               <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Your pet's name:</label>
                 <input
                   type="text"
                   id="name"
@@ -167,24 +167,27 @@ const AddPet = () => {
                 />
 
                 <div className="group">
-                  <input
-                    type="radio"
-                    id="male"
-                    name="gender"
-                    value={genderData.male}
-                    checked={genderData.male === gender}
-                    onChange={e => setGender(e.target.value)}
-                  />
-                  <label htmlFor="male">Male</label>
-                  <input
-                    type="radio"
-                    id="female"
-                    name="gender"
-                    value={genderData.female}
-                    checked={genderData.female === gender}
-                    onChange={e => setGender(e.target.value)}
-                  />
-                  <label htmlFor="female">Female</label>
+                  <label htmlFor="sex"> Your pet's gender: </label>
+                  <div>
+                    <input
+                      type="radio"
+                      id="male"
+                      name="gender"
+                      value={genderData.male}
+                      checked={genderData.male === gender}
+                      onChange={e => setGender(e.target.value)}
+                    />
+                    <label htmlFor="male">Male</label>
+                    <input
+                      type="radio"
+                      id="female"
+                      name="gender"
+                      value={genderData.female}
+                      checked={genderData.female === gender}
+                      onChange={e => setGender(e.target.value)}
+                    />
+                    <label htmlFor="female">Female</label>
+                  </div>
                 </div>
 
                 <label htmlFor="type">Choose the type:</label>
@@ -202,7 +205,7 @@ const AddPet = () => {
                   <option value="Other">Other</option>
                 </select>
 
-                <label htmlFor="age">Enter The Age:</label>
+                <label htmlFor="age">Enter it's Age:</label>
                 <input
                   type="number"
                   value={age}
@@ -218,7 +221,7 @@ const AddPet = () => {
                   onChange={e => setCity(e.target.value)}
                 />
 
-                <label htmlFor="img">Select image:</label>
+                <label htmlFor="img">Enter your pet's picture:</label>
                 <input
                   type="file"
                   id="img"
@@ -231,12 +234,14 @@ const AddPet = () => {
                     Describe Your Pet:
                   </label>
                   <textarea
+                    columns="3"
+                    rows="3"
                     value={desc}
                     onChange={e => setDesc(e.target.value)}
                   ></textarea>
                 </div>
 
-                <button type="submit">Add</button>
+                <button type="submit">Add Pet</button>
                 {errorText && <p className="error">{errorText}</p>}
               </form>
             </>

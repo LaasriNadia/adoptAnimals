@@ -56,6 +56,7 @@ const Nav = () => {
         </Link>
         {!user ? (
           <button
+            id="btnNav"
             onClick={() => {
               netlifyIdentity.open()
             }}
@@ -64,6 +65,7 @@ const Nav = () => {
           </button>
         ) : (
           <button
+            id="btnNav"
             onClick={() => {
               netlifyIdentity.logout()
             }}
