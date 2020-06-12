@@ -12,7 +12,9 @@ nav {
    justify-content: flex-end;
    align-items: center;
 }
-
+@media (max-width: 768px) {
+   .nav__items{display: none;}
+ }
 .nav__item--left {
    margin-right: auto;
 }
@@ -38,3 +40,5 @@ nav {
 .active {
    color: #f06666;
 }
+;
+ 
