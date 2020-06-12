@@ -14,7 +14,13 @@ const archive = props => {
   const nextPage = `/animals/all/${currentPage + 1}`
 
   return (
-    <>
+    <div className="header__section">
+      <div
+        className="header__hero"
+        style={{
+          backgroundImage: `url(${props.data.contentfulContentHeader.featuredImage.fluid.src})`,
+        }}
+      ></div>
       <SEO title="adopAnimals" />
 
       <header>
@@ -102,7 +108,7 @@ const archive = props => {
           )}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -110,6 +116,15 @@ export default archive
 
 export const pageQuery = graphql`
   query BirdsQuery($skip: Int!, $limit: Int!) {
+    contentfulContentHeader {
+      description
+      featuredImage {
+        fluid(maxWidth: 1200, quality: 85) {
+          src
+        }
+      }
+    }
+
     allContentfulAnimales(
       sort: { fields: [createdAt], order: DESC }
       filter: { node_locale: { eq: "en-US" }, type: { eq: "Birds" } }

@@ -3,6 +3,15 @@ import { graphql, Link } from "gatsby"
 import "./DetailsPageStyles.css"
 export const query = graphql`
   query($slug: String!, $type: String!) {
+    contentfulContentHeader {
+      description
+      featuredImage {
+        fluid(maxWidth: 1200, quality: 85) {
+          src
+        }
+      }
+    }
+
     contentfulAnimales(slug: { eq: $slug }, type: { eq: $type }) {
       name
       type
@@ -25,40 +34,48 @@ export const query = graphql`
 const Details = props => {
   return (
     <>
-      <div className="details">
-        <div className="details_container">
-          <div className="img_container">
-            <img
-              id="imgDetailPage"
-              src={props.data.contentfulAnimales.images.fluid.src}
-              alt="pet image"
-            />
-          </div>
-          <div className="details-content">
-            <label>Name:</label>
-            <h4> {props.data.contentfulAnimales.name} </h4>
-            <br />
-            <label>Age:</label>
-            <h4> {props.data.contentfulAnimales.age} Month </h4>
-            <br />
+      <div className="header__section">
+        <div
+          className="header__hero"
+          style={{
+            backgroundImage: `url(${props.data.contentfulContentHeader.featuredImage.fluid.src})`,
+          }}
+        ></div>
+        <div className="details">
+          <div className="details_container">
+            <div className="img_container">
+              <img
+                id="imgDetailPage"
+                src={props.data.contentfulAnimales.images.fluid.src}
+                alt="pet image"
+              />
+            </div>
+            <div className="details-content">
+              <label>Name:</label>
+              <h4> {props.data.contentfulAnimales.name} </h4>
+              <br />
+              <label>Age:</label>
+              <h4> {props.data.contentfulAnimales.age} Month </h4>
+              <br />
 
-            <label>Sex:</label>
-            <h4> {props.data.contentfulAnimales.sex ? "Male" : "Female"} </h4>
-            <br />
-            <label>Category:</label>
-            <h4> {props.data.contentfulAnimales.type} </h4>
-            <br />
-            <label>City:</label>
-            <h4> {props.data.contentfulAnimales.city} </h4>
-            <br />
-            <label>Published at:</label>
-            <h4> {props.data.contentfulAnimales.createdAt} </h4>
-            <br />
-            <label>Description:</label>
-            <h4> {props.data.contentfulAnimales.description.description} </h4>
-            <div className="buttons">
-              <Link to="/apply">Apply for adoption</Link>
-              <Link to="/">Back</Link>
+              <label>Sex:</label>
+              <h4> {props.data.contentfulAnimales.sex ? "Male" : "Female"} </h4>
+              <br />
+              <label>Category:</label>
+              <h4> {props.data.contentfulAnimales.type} </h4>
+              <br />
+              <label>City:</label>
+              <h4> {props.data.contentfulAnimales.city} </h4>
+              <br />
+              <label>Published at:</label>
+              <h4> {props.data.contentfulAnimales.createdAt} </h4>
+              <br />
+              <label>Description:</label>
+              <h4> {props.data.contentfulAnimales.description.description} </h4>
+              <div className="buttons">
+                <Link to="/apply">Apply for adoption</Link>
+                <Link to="/">Back</Link>
+              </div>
             </div>
           </div>
         </div>

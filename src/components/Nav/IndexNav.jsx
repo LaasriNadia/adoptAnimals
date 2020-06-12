@@ -57,22 +57,19 @@ const Nav = props => {
 
 export default Nav
 const Logo = styled.a`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
   & img {
     height: 40px;
   }
 `
 const NavBar = styled.div`
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1;
   font-size: 1.4rem;
-  @media (max-width: 768px) {
-    background:#bac9c8;
-  }
 `
 
 const FlexContainer = styled.div`

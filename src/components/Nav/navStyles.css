@@ -12,9 +12,13 @@ nav {
    justify-content: flex-end;
    align-items: center;
 }
+
 @media (max-width: 768px) {
-   .nav__items{display: none;}
- }
+   .nav__items {
+      display: none;
+   }
+}
+
 .nav__item--left {
    margin-right: auto;
 }
@@ -40,14 +44,11 @@ nav {
 .active {
    color: #f06666;
 }
-<<<<<<< HEAD
-;
- 
-=======
+
+
 
 .nav__items #btnNav {
    background: #4eb55f;
    margin: 1%;
    width: 110px;
 }
->>>>>>> ca41953a8b8505a38b472d268d7c9a7ed53529eb
