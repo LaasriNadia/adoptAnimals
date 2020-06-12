@@ -85,7 +85,7 @@ const FlexContainer = styled.div`
 `
 const Button = styled.button`
   color: #fff;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 600;
   font-size: 18px;
   border-bottom: 1px solid transparent;
@@ -110,7 +110,7 @@ const NavLinks = styled.div`
 
   & a {
     color: #fff;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 600;
     border-bottom: 1px solid transparent;
     margin: 0 1.5rem;

@@ -1,16 +1,20 @@
 .add-cont {
   transform: translateY(100px);
-  max-width: 100%;
+  max-width: 60%;
   background: #fff;
   color: #3e4443;
-  padding: 10%;
+  padding: 5%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 15px;
   text-align: start;
+  margin: 0 auto;
 }
 
-.add-cont h1 {
-  color: #3e4443;
+#addPetTitle {
+  text-align: center;
+  font-family: baskervill, sans-serif !important;
+  color: #4eb55fa3;
+  text-transform: uppercase;
 }
 
 form {
@@ -18,15 +22,21 @@ form {
   flex-direction: column;
 }
 
-form > * {
+form>* {
   margin-top: 15px;
 }
 
-input[type="text"] {
-  border: none;
+input[type="text"],
+textarea {
   padding: 10px;
-  background-color: #fff;
   border: 1px solid #3e4443;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+input[type="file"] {
+  width: fit-content;
 }
 
 select {
@@ -37,9 +47,15 @@ select {
   background-color: #f1f1f1;
 }
 
-.group > * {
+.group>* {
   margin-right: 15px;
   margin-top: 15px;
+
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
 }
 
 .error {
@@ -51,4 +67,37 @@ button[disabled] {
   cursor: not-allowed;
   background-color: #cccccc;
   color: #666666;
+}
+
+button {
+  width: 150px;
+  align-self: center;
+}
+
+label {
+  font-weight: bold;
+  font-family: Muli, sans-serif;
+  font-size: 17px;
+}
+
+input[type="number"] {
+  width: 50px
+}
+
+input[type='radio'] {
+  padding-left: 5px;
+}
+
+label[for=male],
+label[for=female] {
+  padding: 5px;
+  font-weight: normal;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border: 1px solid #4eb55f;
+  box-shadow: 0 0 10px #719ECE;
 }
