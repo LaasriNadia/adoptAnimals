@@ -27,21 +27,21 @@ const Contact = () => {
         ></div>
         <div className="contact">
           <div className="auth">
-            <h2 className="name">Lorem ipsum</h2>
+            <h2 className="name">Laasri Nadia</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
-              expedita? Deleniti quisquam ipsum amet illum necessitatibus, eum
-              obcaecati aliquid quam!
+              I'm a Front-end-developer. I love creating new websites by
+              bringing ideas to real life. find more about me by clicking on the
+              social media links.
             </p>
             <ul>
               <li>
-                <a href="/">
+                <a href="https://github.com/LaasriNadia">
                   {" "}
                   <img src={githubIcon} alt="" />{" "}
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="https://twitter.com/laasrinadiaa">
                   {" "}
                   <img src={twitterIcon} alt="" />{" "}
                 </a>
@@ -50,7 +50,7 @@ const Contact = () => {
           </div>
           <hr />
           <div className="auth">
-            <h2 className="name">Lorem ipsum</h2>
+            <h2 className="name">Ismail El Mahi</h2>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
               expedita? Deleniti quisquam ipsum amet illum necessitatibus, eum
@@ -58,13 +58,13 @@ const Contact = () => {
             </p>
             <ul>
               <li>
-                <a href="/">
+                <a href="https://github.com/ismail-elmahi">
                   {" "}
                   <img src={githubIcon} alt="" />{" "}
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="https://twitter.com/ismail1elmahi">
                   {" "}
                   <img src={twitterIcon} alt="" />{" "}
                 </a>
