@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Adopt pets App`,
     description: `Find yourself a pet to adopt, publish your pets for people who like to adopt new pets`,
-
+    author: `Ismail El mahi & Nadia Assri`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

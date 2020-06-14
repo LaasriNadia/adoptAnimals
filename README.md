@@ -15,6 +15,8 @@ A person can publish his pet's info, only if he is a member, but anyone can see 
 - CSS
 - Styled Components.
 - Gatsby js
+- Backend Side: 
+  We use Contentfull CMS 
 
 ## 💹 -Deploy
 

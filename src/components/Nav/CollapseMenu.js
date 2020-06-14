@@ -64,7 +64,7 @@ const Button = styled.button`
   text-decoration: none;
   background: transparent;
   font-size: 18px;
-  padding-top: 0;
+  padding-top: 5px;
   font-family: Muli, sans-serif;
   &:hover {
     color: #fdcb6e;

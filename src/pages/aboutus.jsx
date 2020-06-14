@@ -29,19 +29,11 @@ export default ({ location }) => (
 
           <div className="about">
             <div className="about_cont">
-              <h2>About</h2>
+              <h2>About Us</h2>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Libero, expedita? Deleniti quisquam ipsum amet illum
-                necessitatibus, eum obcaecati aliquid quam! Lorem, ipsum dolor
-                sit amet consectetur adipisicing elit. Similique, quia? Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Magnam amet
-                sequi corporis, error tempora, iure sint laborum fugiat
-                similique velit qui quod totam assumenda! Officiis, iste facere?
-                Maiores voluptate maxime incidunt praesentium ipsa, eum numquam
-                tempora doloremque? Facilis quidem laboriosam animi suscipit
-                sint, obcaecati unde omnis eius dolor exercitationem tempore
-                cumque recusandae.
+              Adoption Animal is a non-profit Moroccan association. 
+              Our mission  is to help get homeless pets out of the shelters and into loving homes.
+              And people can looking for someone to adopt their pet and also for persons who are looking for pets to adopt.
               </p>
             </div>
           </div>
