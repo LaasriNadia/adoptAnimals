@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { IdentityContext } from "../Context.jsx"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import logo from "../../images/compass-logo.svg"
+import logo from "../../images/animal.png"
 import CollapseMenu from "../Nav/CollapseMenu"
 import BurgerMenu from "../Nav/BurgerMenu"
 
