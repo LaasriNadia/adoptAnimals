@@ -13,9 +13,13 @@ const Nav = props => {
     <>
       <NavBar>
         <FlexContainer>
-          <Logo href="/">
+          <Link className="logoLinkStyles" to="/">
+            {" "}
+            <img className="logoStyles" src={logo} alt="logo" />{" "}
+          </Link>
+          {/* <Logo href="/">
             <img src={logo} alt="Logo" />
-          </Logo>
+          </Logo> */}
           <NavLinks>
             <Link to="/">Home</Link>
             <Link to="/addpet/">Add Pet</Link>
@@ -56,13 +60,13 @@ const Nav = props => {
 }
 
 export default Nav
-const Logo = styled.a`
-  display: flex;
-  align-items: center;
-  & img {
-    height: 40px;
-  }
-`
+// const Logo = styled.a`
+//   display: flex;
+//   align-items: center;
+//   & img {
+//     height: 40px;
+//   }
+// `
 const NavBar = styled.div`
   position: absolute;
   background: #bac9c8;
