@@ -17,7 +17,7 @@
     height: 550px;
 }
 
-.details-content label {
+.details-content span {
     color: #4eb55f;
     font-family: Helvetica, sans-serif;
 }

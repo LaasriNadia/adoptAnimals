@@ -3,21 +3,27 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { IdentityContext } from "../Context.jsx"
 
-import { useSpring, animated } from "react-spring"
+import { useSpring } from "react-spring"
 
 const CollapseMenu = props => {
   const { open } = useSpring({ open: props.navbarState ? 0 : 1 })
   const { user, identity: netlifyIdentity } = useContext(IdentityContext)
   if (props.navbarState === true) {
     return (
-      <CollapseWrapper
-       
-      >
+      <CollapseWrapper>
         <NavLinks>
-          <Link onClick={props.handleNavbar} to="/">Home</Link>
-          <Link onClick={props.handleNavbar} to="/addpet/">Add Pet</Link>
-          <Link onClick={props.handleNavbar} to="/aboutus/">About Us</Link>
-          <Link onClick={props.handleNavbar} to="/contact/">Contact</Link>
+          <Link onClick={props.handleNavbar} to="/">
+            Home
+          </Link>
+          <Link onClick={props.handleNavbar} to="/addpet/">
+            Add Pet
+          </Link>
+          <Link onClick={props.handleNavbar} to="/aboutus/">
+            About Us
+          </Link>
+          <Link onClick={props.handleNavbar} to="/contact/">
+            Contact
+          </Link>
           {!user ? (
             <Button
               onClick={() => {

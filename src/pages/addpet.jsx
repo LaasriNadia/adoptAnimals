@@ -88,7 +88,7 @@ const AddPet = () => {
   const handleSubmit = e => {
     e.preventDefault()
     const isFormValid = isValid()
-    if (isFormValid == true) {
+    if (isFormValid === true) {
       client
         .getSpace(process.env.GATSBY_CONTENTFUL_SPACE_ID)
         .then(space =>
@@ -193,6 +193,7 @@ const AddPet = () => {
                 <label htmlFor="type">Choose the type:</label>
                 <select
                   id="types"
+                  onBlur={e => setType(e.target.value)}
                   onChange={e => setType(e.target.value)}
                   value={type}
                 >

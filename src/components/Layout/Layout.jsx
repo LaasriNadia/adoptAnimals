@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import "./layoutStyles.css"
 import Nav from "../Nav/IndexNav.jsx"
-import { CubeGrid } from "styled-loaders-react"
 import { Block } from "styled-loaders-react"
 import { Provider } from "../Context.jsx"
 const Layout = ({ children }) => {
@@ -20,7 +19,10 @@ const Layout = ({ children }) => {
   return (
     <Provider>
       {loading ? (
-        <Block color="green" size="60px" duration="5s" />
+        <div className="loader_container">
+          <p>Loading...</p>
+          <p>Please wait</p>
+        </div>
       ) : (
         <>
           <Nav navbarState={navbarOpen} handleNavbar={handleNavbar} />

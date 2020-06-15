@@ -47,30 +47,30 @@ const Details = props => {
               <img
                 id="imgDetailPage"
                 src={props.data.contentfulAnimales.images.fluid.src}
-                alt="pet image"
+                alt="pet_picture"
               />
             </div>
             <div className="details-content">
-              <label>Name:</label>
+              <span>Name:</span>
               <h4> {props.data.contentfulAnimales.name} </h4>
               <br />
-              <label>Age:</label>
+              <span>Age:</span>
               <h4> {props.data.contentfulAnimales.age} Month </h4>
               <br />
 
-              <label>Sex:</label>
+              <span>Sex:</span>
               <h4> {props.data.contentfulAnimales.sex ? "Male" : "Female"} </h4>
               <br />
-              <label>Category:</label>
+              <span>Category:</span>
               <h4> {props.data.contentfulAnimales.type} </h4>
               <br />
-              <label>City:</label>
+              <span>City:</span>
               <h4> {props.data.contentfulAnimales.city} </h4>
               <br />
-              <label>Published at:</label>
+              <span>Published at:</span>
               <h4> {props.data.contentfulAnimales.createdAt} </h4>
               <br />
-              <label>Description:</label>
+              <span>Description:</span>
               <h4> {props.data.contentfulAnimales.description.description} </h4>
               <div className="buttons">
                 <Link to="/apply">Apply for adoption</Link>
