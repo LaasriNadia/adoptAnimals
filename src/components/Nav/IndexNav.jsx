@@ -60,15 +60,11 @@ export default Nav
 
 const NavBar = styled.div`
   position: absolute;
-  background: #bac9c8;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1;
   font-size: 1.4rem;
-  @media (min-width: 768px) {
-    background: transparent;
-  }
 `
 
 const FlexContainer = styled.div`

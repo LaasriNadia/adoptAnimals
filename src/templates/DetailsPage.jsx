@@ -9,6 +9,8 @@ export const query = graphql`
       age
       sex
       city
+      phone
+      email
       description {
         description
       }
