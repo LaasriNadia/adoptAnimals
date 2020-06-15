@@ -31,7 +31,17 @@ input[type=submit] {
 button:focus {
   outline: none !important;
   border: none;
- 
+
+}
+
+.logoLinkStyles {
+  display: flex;
+  align-items: center;
+}
+
+.logoStyles {
+
+  height: 40px;
 }
 
 .header_title {

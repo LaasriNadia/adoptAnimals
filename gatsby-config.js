@@ -8,7 +8,13 @@ module.exports = {
     description: `Find yourself a pet to adopt, publish your pets for people who like to adopt new pets`,
     author: `Ismail El mahi & Nadia Assri`
   },
-  plugins: [
+  plugins: [{
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `tomato`,
+        showSpinner: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-layout`,
