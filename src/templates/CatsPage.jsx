@@ -15,12 +15,7 @@ const archive = props => {
 
   return (
     <div className="header__section">
-      <div
-        className="header__hero"
-        style={{
-          backgroundImage: `url(${props.data.contentfulContentHeader.featuredImage.fluid.src})`,
-        }}
-      ></div>
+      <div className="header__hero"></div>
       <SEO title="adopAnimals" />
 
       <header>
@@ -120,14 +115,6 @@ export default archive
 
 export const pageQuery = graphql`
   query CatsQuery($skip: Int!, $limit: Int!) {
-    contentfulContentHeader {
-      description
-      featuredImage {
-        fluid(maxWidth: 1200, quality: 85) {
-          src
-        }
-      }
-    }
     allContentfulAnimales(
       sort: { fields: [createdAt], order: DESC }
       filter: { node_locale: { eq: "en-US" }, type: { eq: "Cats" } }

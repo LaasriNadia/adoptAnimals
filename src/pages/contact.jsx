@@ -1,30 +1,12 @@
 import React from "react"
 import "./contactStyles.css"
-import { graphql, useStaticQuery } from "gatsby"
 import githubIcon from "../images/github.png"
 import twitterIcon from "../images/twitter.png"
 const Contact = () => {
-  const pictureContactPage = useStaticQuery(graphql`
-    query {
-      contentfulContentHeader {
-        description
-        featuredImage {
-          fluid(maxWidth: 1200, quality: 85) {
-            src
-          }
-        }
-      }
-    }
-  `)
   return (
     <>
       <div className="header__section">
-        <div
-          className="header__hero"
-          style={{
-            backgroundImage: `url(${pictureContactPage.contentfulContentHeader.featuredImage.fluid.src})`,
-          }}
-        ></div>
+        <div className="header__hero"></div>
         <div className="contact">
           <div className="auth">
             <h2 className="name">Laasri Nadia</h2>
@@ -52,8 +34,8 @@ const Contact = () => {
           <div className="auth">
             <h2 className="name">Ismail El Mahi</h2>
             <p>
-            I am a Self-Taught Front-End Developer. 
-            I have a passion to building and maintaining responsive websites in different fields.
+              I am a Self-Taught Front-End Developer. I have a passion to
+              building and maintaining responsive websites in different fields.
             </p>
             <ul>
               <li>

@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react"
 import { IdentityContext } from "../components/Context.jsx"
 import { navigate } from "@reach/router"
-import { graphql, useStaticQuery } from "gatsby"
 import "./addStyles.css"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
@@ -9,19 +8,6 @@ const contentful = require("contentful-management")
 
 const AddPet = () => {
   const { user, identity: netlifyIdentity } = useContext(IdentityContext)
-
-  const pictureAddPage = useStaticQuery(graphql`
-    query {
-      contentfulContentHeader {
-        description
-        featuredImage {
-          fluid(maxWidth: 1200, quality: 85) {
-            src
-          }
-        }
-      }
-    }
-  `)
 
   const [name, setName] = useState("")
   const [city, setCity] = useState("")
@@ -145,12 +131,7 @@ const AddPet = () => {
   return (
     <>
       <div className="header__section">
-        <div
-          className="header__hero"
-          style={{
-            backgroundImage: `url(${pictureAddPage.contentfulContentHeader.featuredImage.fluid.src})`,
-          }}
-        ></div>
+        <div className="header__hero"></div>
         <ToastContainer />
         <div className="add-cont">
           {user ? (

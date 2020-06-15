@@ -3,15 +3,6 @@ import { graphql, Link } from "gatsby"
 import "./DetailsPageStyles.css"
 export const query = graphql`
   query($slug: String!, $type: String!) {
-    contentfulContentHeader {
-      description
-      featuredImage {
-        fluid(maxWidth: 1200, quality: 85) {
-          src
-        }
-      }
-    }
-
     contentfulAnimales(slug: { eq: $slug }, type: { eq: $type }) {
       name
       type
@@ -35,12 +26,7 @@ const Details = props => {
   return (
     <>
       <div className="header__section">
-        <div
-          className="header__hero"
-          style={{
-            backgroundImage: `url(${props.data.contentfulContentHeader.featuredImage.fluid.src})`,
-          }}
-        ></div>
+        <div className="header__hero"></div>
         <div className="details">
           <div className="details_container">
             <div className="img_container">
