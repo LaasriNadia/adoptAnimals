@@ -9,6 +9,10 @@ const contentful = require("contentful-management")
 const AddPet = () => {
   const { user, identity: netlifyIdentity } = useContext(IdentityContext)
 
+  //
+  const [phone, setPhone] = useState("")
+  const [email, setEmail] = useState("")
+  //
   const [name, setName] = useState("")
   const [city, setCity] = useState("")
   const [genderData] = useState({ male: "male", female: "female" })
@@ -61,7 +65,9 @@ const AddPet = () => {
       type === "" ||
       age === 0 ||
       city === "" ||
-      desc === ""
+      desc === "" ||
+      phone === "" ||
+      email === ""
     ) {
       setErrorText("All fields are required")
       return false
@@ -104,6 +110,12 @@ const AddPet = () => {
                 },
                 description: {
                   "en-US": desc,
+                },
+                phone: {
+                  "en-US": phone,
+                },
+                email: {
+                  "en-US": email,
                 },
                 images: {
                   "en-US": {
@@ -222,6 +234,24 @@ const AddPet = () => {
                     onChange={e => setDesc(e.target.value)}
                   ></textarea>
                 </div>
+
+                <label htmlFor="phone">Your Phone Number:</label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
+                />
+
+                <label htmlFor="email">Your Email:</label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                />
 
                 <button type="submit">Add Pet</button>
                 {errorText && <p className="error">{errorText}</p>}

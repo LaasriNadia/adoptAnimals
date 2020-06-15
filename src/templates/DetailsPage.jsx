@@ -58,8 +58,14 @@ const Details = props => {
               <br />
               <span>Description:</span>
               <h4> {props.data.contentfulAnimales.description.description} </h4>
+
+              <p>Informations about the publisher:</p>
+              <span>Phone Number:</span>
+              <h4> {props.data.contentfulAnimales.phone} </h4>
+              <span>Email:</span>
+              <h4> {props.data.contentfulAnimales.email} </h4>
+
               <div className="buttons">
-                <Link to="/apply">Apply for adoption</Link>
                 <Link to="/">Back</Link>
               </div>
             </div>
