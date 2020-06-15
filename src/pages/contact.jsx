@@ -52,9 +52,8 @@ const Contact = () => {
           <div className="auth">
             <h2 className="name">Ismail El Mahi</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
-              expedita? Deleniti quisquam ipsum amet illum necessitatibus, eum
-              obcaecati aliquid quam!
+            I am a Self-Taught Front-End Developer. 
+            I have a passion to building and maintaining responsive websites in different fields.
             </p>
             <ul>
               <li>
