@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import "./layoutStyles.css"
 import Nav from "../Nav/IndexNav.jsx"
-import { Block } from "styled-loaders-react"
+import Spinner from "../Spinner.jsx"
 import { Provider } from "../Context.jsx"
 const Layout = ({ children }) => {
   const handleNavbar = () => {
@@ -20,8 +20,7 @@ const Layout = ({ children }) => {
     <Provider>
       {loading ? (
         <div className="loader_container">
-          <p>Loading...</p>
-          <p>Please wait</p>
+          <Spinner />
         </div>
       ) : (
         <>
