@@ -3,29 +3,24 @@ import PropTypes from "prop-types"
 import "./layoutStyles.css"
 import Nav from "../Nav/IndexNav.jsx"
 import { CubeGrid } from "styled-loaders-react"
-import { Provider, IdentityContext } from "../Context.jsx"
+import { Block } from "styled-loaders-react"
+import { Provider } from "../Context.jsx"
 const Layout = ({ children }) => {
   const handleNavbar = () => {
     setnavbarOpen(!navbarOpen)
   }
   const [navbarOpen, setnavbarOpen] = useState(false)
-  const [loading, setloading] = useState(true)
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     setTimeout(() => {
-      setloading(false)
+      setLoading(false)
     }, 1500)
   }, [])
 
   return (
     <Provider>
       {loading ? (
-        <div
-          style={{
-            marginTop:"310px"
-          }}
-        >
-          <CubeGrid color="#fdcb6e" />
-        </div>
+        <Block color="green" size="60px" duration="5s" />
       ) : (
         <>
           <Nav navbarState={navbarOpen} handleNavbar={handleNavbar} />
