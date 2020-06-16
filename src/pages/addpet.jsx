@@ -199,7 +199,7 @@ const AddPet = () => {
                   <option value="Other">Other</option>
                 </select>
 
-                <label htmlFor="age">Enter it's Age:</label>
+                <label htmlFor="age">Enter it's Age (months) :</label>
                 <input
                   type="number"
                   value={age}
