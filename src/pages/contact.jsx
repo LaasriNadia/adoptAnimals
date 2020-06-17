@@ -34,8 +34,8 @@ const Contact = () => {
           <div className="auth">
             <h2 className="name">Ismail El Mahi</h2>
             <p>
-              I am a Self-Taught Front-End Developer. I have a passion to
-              building and maintaining responsive websites in different fields.
+              I am a Self-Taught Front-End Developer. I have a passion to build
+              and maintain responsive websites in different fields.
             </p>
             <ul>
               <li>
