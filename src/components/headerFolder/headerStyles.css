@@ -1,4 +1,5 @@
 .header__hero {
+  background-image: url(../../images/bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -9,6 +10,7 @@
   margin-right: -10%;
   z-index: -1;
 }
+
 .header__hero:before {
   content: "";
   position: absolute;
@@ -16,26 +18,28 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.25) 0%,
-    rgba(186, 201, 200, 0.5) 75%,
-    rgb(186, 201, 200, 1) 100%
-  )
+  background-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(186, 201, 200, 0.5) 75%,
+      rgb(186, 201, 200, 1) 100%)
 }
+
 .header__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 580px;
 }
+
 .header__info {
   max-width: 500px;
   margin-top: 40px;
 }
+
 .header__title {
   margin: 0 0 30px 0;
 }
+
 .header__subtitle {
   font-family: Muli, sans-serif;
   font-size: 15px;

@@ -6,7 +6,7 @@ import { IdentityContext } from "../Context.jsx"
 import { useSpring } from "react-spring"
 
 const CollapseMenu = props => {
-  const { open } = useSpring({ open: props.navbarState ? 0 : 1 })
+   
   const { user, identity: netlifyIdentity } = useContext(IdentityContext)
   if (props.navbarState === true) {
     return (

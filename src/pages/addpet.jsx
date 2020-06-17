@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react"
 import { IdentityContext } from "../components/Context.jsx"
 import { navigate } from "@reach/router"
-import { graphql, useStaticQuery } from "gatsby"
 import "./addStyles.css"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
@@ -10,19 +9,10 @@ const contentful = require("contentful-management")
 const AddPet = () => {
   const { user, identity: netlifyIdentity } = useContext(IdentityContext)
 
-  const pictureAddPage = useStaticQuery(graphql`
-    query {
-      contentfulContentHeader {
-        description
-        featuredImage {
-          fluid(maxWidth: 1200, quality: 85) {
-            src
-          }
-        }
-      }
-    }
-  `)
-
+  //
+  const [phone, setPhone] = useState("")
+  const [email, setEmail] = useState("")
+  //
   const [name, setName] = useState("")
   const [city, setCity] = useState("")
   const [genderData] = useState({ male: "male", female: "female" })
@@ -75,7 +65,9 @@ const AddPet = () => {
       type === "" ||
       age === 0 ||
       city === "" ||
-      desc === ""
+      desc === "" ||
+      phone === "" ||
+      email === ""
     ) {
       setErrorText("All fields are required")
       return false
@@ -119,6 +111,12 @@ const AddPet = () => {
                 description: {
                   "en-US": desc,
                 },
+                phone: {
+                  "en-US": phone,
+                },
+                email: {
+                  "en-US": email,
+                },
                 images: {
                   "en-US": {
                     sys: {
@@ -145,12 +143,7 @@ const AddPet = () => {
   return (
     <>
       <div className="header__section">
-        <div
-          className="header__hero"
-          style={{
-            backgroundImage: `url(${pictureAddPage.contentfulContentHeader.featuredImage.fluid.src})`,
-          }}
-        ></div>
+        <div className="header__hero"></div>
         <ToastContainer />
         <div className="add-cont">
           {user ? (
@@ -206,7 +199,7 @@ const AddPet = () => {
                   <option value="Other">Other</option>
                 </select>
 
-                <label htmlFor="age">Enter it's Age:</label>
+                <label htmlFor="age">Enter it's Age (months) :</label>
                 <input
                   type="number"
                   value={age}
@@ -241,6 +234,24 @@ const AddPet = () => {
                     onChange={e => setDesc(e.target.value)}
                   ></textarea>
                 </div>
+
+                <label htmlFor="phone">Your Phone Number:</label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
+                />
+
+                <label htmlFor="email">Your Email:</label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                />
 
                 <button type="submit">Add Pet</button>
                 {errorText && <p className="error">{errorText}</p>}

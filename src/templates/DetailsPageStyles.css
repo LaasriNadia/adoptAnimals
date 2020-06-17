@@ -22,15 +22,7 @@
     font-family: Helvetica, sans-serif;
 }
 
-@media screen and (max-width: 800px) {
-    .details_container {
-        display: block;
-    }
 
-    #imgDetailPage {
-        height: 150px;
-    }
-}
 
 .img_container {
     flex: 1;
@@ -38,7 +30,6 @@
 
 .details-content {
     flex: 1;
-    text-align: center;
 }
 
 .details-content h4 {
@@ -61,10 +52,45 @@
     text-decoration: none;
     text-transform: capitalize;
     border: 1px solid #bac9c8;
+    background-color: transparent;
+    transition: all .3s ease-in;
 }
 
 .buttons a:hover {
-    color: #212c22;
-    background: #f7f7f7;
-    border: 1px solid #bac9c8;
+    background-color: #4eb55f;
+}
+
+
+
+.pet_info,
+.user_info {
+    margin: 10px;
+    border: solid 1px #d5d8d5;
+    padding: 20px;
+    font-family: Helvetica, sans-serif;
+}
+
+.pet_info>h2,
+.user_info>h2 {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 800px) {
+    .details_container {
+        display: block;
+    }
+
+    #imgDetailPage {
+        height: 150px;
+    }
+
+    .details {
+        max-width: 100%;
+    }
+
+    .pet_info,
+    .user_info {
+        padding: 10px;
+    }
 }

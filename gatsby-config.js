@@ -5,8 +5,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Adopt pets App`,
-    description: `Find yourself a pet to adopt, publish your pets for people who like to adopt new pets`,
-    author: `Ismail El mahi & Nadia Assri`
+    description: `Find yourself a pet to adopt, publish your pets for people who like to adopt them`,
+    author: `Ismail El mahi & Nadia Laasri`
   },
   plugins: [{
       resolve: `gatsby-plugin-nprogress`,

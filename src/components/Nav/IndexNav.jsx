@@ -17,9 +17,6 @@ const Nav = props => {
             {" "}
             <img className="logoStyles" src={logo} alt="logo" />{" "}
           </Link>
-          {/* <Logo href="/">
-            <img src={logo} alt="Logo" />
-          </Logo> */}
           <NavLinks>
             <Link to="/">Home</Link>
             <Link to="/addpet/">Add Pet</Link>
@@ -60,13 +57,7 @@ const Nav = props => {
 }
 
 export default Nav
-// const Logo = styled.a`
-//   display: flex;
-//   align-items: center;
-//   & img {
-//     height: 40px;
-//   }
-// `
+
 const NavBar = styled.div`
   position: fixed;
   background: #868686;
@@ -75,9 +66,6 @@ const NavBar = styled.div`
   left: 0;
   z-index: 2;
   font-size: 1.4rem;
-  @media (min-width: 768px) {
-    background: transparent;
-  }
 `
 
 const FlexContainer = styled.div`
