@@ -51,9 +51,12 @@ const CollapseMenu = props => {
 export default CollapseMenu
 
 const CollapseWrapper = styled.div`
-  background: #bac9c8;
+  background: #868686f0;
   position: fixed;
-  top: 4.5rem;
+  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   left: 0;
   right: 0;
   z-index: 1;

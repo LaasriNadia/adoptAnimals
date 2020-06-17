@@ -52,7 +52,7 @@ const Contact = () => {
           <div className="auth">
             <h2 className="name">Ismail El Mahi</h2>
             <p>
-            I am a Self-Taught Front-End Developer. 
+            I am a Self-Taught Front-end developer. 
             I have a passion to building and maintaining responsive websites in different fields.
             </p>
             <ul>
