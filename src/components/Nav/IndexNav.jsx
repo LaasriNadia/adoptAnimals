@@ -59,8 +59,8 @@ const Nav = props => {
 export default Nav
 
 const NavBar = styled.div`
-  position: fixed;
-  background: #868686;
+  position: absolute;
+  background: transparent;
   width: 100%;
   top: 0;
   left: 0;
