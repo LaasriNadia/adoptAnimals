@@ -3,9 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { IdentityContext } from "../Context.jsx"
 
-
 const CollapseMenu = props => {
-   
   const { user, identity: netlifyIdentity } = useContext(IdentityContext)
   if (props.navbarState === true) {
     return (
@@ -53,9 +51,9 @@ const CollapseWrapper = styled.div`
   background: #868686f0;
   position: fixed;
   height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   left: 0;
   right: 0;
   z-index: 1;
