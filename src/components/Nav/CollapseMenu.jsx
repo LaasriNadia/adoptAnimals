@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { IdentityContext } from "../Context.jsx"
 
-import { useSpring } from "react-spring"
 
 const CollapseMenu = props => {
    
