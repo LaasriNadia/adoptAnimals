@@ -19,7 +19,7 @@
     "gatsby-plugin-sharp": "^2.6.1",
     "gatsby-source-contentful": "^2.3.3",
     "gatsby-source-filesystem": "^2.3.1",
-    "gatsby-transformer-remark": "^2.8.7",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.1",
     "netlify-identity-widget": "^1.6.0",
     "prop-types": "^15.7.2",
